@@ -60,6 +60,9 @@ public class ProjectService {
 		if(!project.getProjectLeader().equals(username)) {
 			throw new ProjectNotFoundException("Project not found in your account");				
 		}
+		if(!project.getProjectIdentifier().equals(projectId)) {
+			throw new ProjectNotFoundException("ProjectId not found in your account");	
+		}
 		return project;
 	}
 	public Iterable<Project> findAllProjects(){
